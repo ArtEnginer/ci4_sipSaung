@@ -11,11 +11,11 @@ class Home extends BaseController
    
     public function index()
     {    
-        return view('App\Views\Frontend\Page\index.php', $this->data);
+        return view('App\Views\Frontend\Page\index', $this->data);
     }
 
     public function pendaftaran()
     {
-        return view('App\Views\Frontend\Page\pendaftaran.php', $this->data);
+        return view('App\Views\Frontend\Page\pendaftaran', $this->data);
     }
 }

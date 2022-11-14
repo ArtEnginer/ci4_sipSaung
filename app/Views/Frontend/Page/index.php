@@ -343,23 +343,6 @@
 
     </section><!-- End Testimonials Section -->
 
-
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="pendaftaran" class="pendaftaran">
-
-        <div class="container" data-aos="fade-up">
-
-            <header class="section-header">
-                <h2>Formulir</h2>
-                <p>Pendaftaran</p>
-            </header>
-
-            <?= view('App\Views\Frontend\Page\pendaftaran') ?>
-
-        </div>
-
-    </section><!-- End Recent Blog Posts Section -->
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
 

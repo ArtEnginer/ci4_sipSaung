@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Entities\Siswa as entity;
 
 class SiswaModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'siswas';
+    protected $table            = 'ps_siswa';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $returnType       = 'array';
+    protected $returnType       = entity::class;
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $protectFields    = false;
+    protected $allowedFields    = ['nama', 'nisn', 'nik', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'alamat', 'asal_sekolah', 'no_hp', 'email', 'nama_ayah', 'nama_ibu', 'no_hp_ortu', 'tanggal_mulai', 'tanggal_selesai', 'jenis_kelas'];
 
     // Dates
     protected $useTimestamps = false;
@@ -26,7 +27,7 @@ class SiswaModel extends Model
     // Validation
     protected $validationRules      = [];
     protected $validationMessages   = [];
-    protected $skipValidation       = false;
+    protected $skipValidation       = true;
     protected $cleanValidationRules = true;
 
     // Callbacks

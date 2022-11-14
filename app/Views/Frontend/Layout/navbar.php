@@ -2,7 +2,7 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-                <li><a class="nav-link scrollto" href="#pendaftaran">Pendaftaran</a></li>
+                <li><a class="nav-link scrollto" href="<?= route_to('pendaftaran') ?>">Pendaftaran</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 <?php if (auth()->user() !== null) : ?>
                     <li>

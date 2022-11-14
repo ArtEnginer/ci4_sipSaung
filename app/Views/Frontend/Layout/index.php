@@ -138,9 +138,11 @@
     <script src="<?= base_url('assets') ?>/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="<?= base_url('assets') ?>/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="<?= base_url('assets') ?>/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets') ?>/js/main.js"></script>
+    <script src="<?= base_url('assets') ?>/js/custom.js"></script>
 
 </body>
 
