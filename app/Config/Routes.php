@@ -36,13 +36,15 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
-service('auth')->routes($routes);
+$routes->group('', ['namespace' => 'App\Controllers\Api'], function ($routes) {
+    $routes->post('pendaftaran', 'Home::pendaftaran', ['as' => 'pendaftaran']);
+});
 
 $routes->group('panel',['namespace' => 'App\Controllers\Panel'], function($routes){
     $routes->get('panel', 'Dashboard::index',['as' =>'panel']);
 });
 
+service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -13,4 +13,9 @@ class Home extends BaseController
     {    
         return view('App\Views\Frontend\Page\index.php', $this->data);
     }
+
+    public function pendaftaran()
+    {
+        return view('App\Views\Frontend\Page\pendaftaran.php', $this->data);
+    }
 }
