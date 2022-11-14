@@ -86,8 +86,8 @@
     <script src="<?= base_url('assets') ?>/js/app.js"></script>
     <!-- Custom JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.js" integrity="sha512-e6Nk3mhokFywlEPtnkGmop6rHh6maUqL0T65yOkbSsJ3/y9yiwb+LzFoSTJM/a4j/gKwh/y/pHiSLxE82ARhJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="<?= base_url('assets') . '/js/panel.js' ?>"></script>
     <script src="<?= base_url('assets') ?>/js/app.js"></script>
+    <script src="<?= base_url('assets') ?>/js/custom.js"></script>
 </body>
 
 </html>

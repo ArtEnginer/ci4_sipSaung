@@ -39,14 +39,29 @@ $routes->get('/', 'Home::index');
 $routes->group('', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('pendaftaran', 'Home::pendaftaran', ['as' => 'pendaftaran']);
 });
-$routes->group('', ['namespace' => 'App\Controllers\Api'], function ($routes) {
-    $routes->post('pendaftaran', 'Home::pendaftaran', ['as' => 'pendaftaran']);
-});
 
 $routes->group('', ['namespace' => 'App\Controllers\Panel'], function ($routes) {
     $routes->get('panel', 'Dashboard::index', ['as' => 'panel']);
+    $routes->get('jeniskelas', 'JenisKelas::index', ['as' => 'jenis-kelas']);
+    $routes->get('jeniskelas/add', 'JenisKelas::add', ['as' => 'jenis-kelas-add']);
+    $routes->get('jeniskelas/edit/(:num)', 'JenisKelas::edit/$1', ['as' => 'jenis-kelas-edit']);
+    $routes->get('jeniskelas/delete/(:num)', 'JenisKelas::delete/$1', ['as' => 'jenis-kelas-delete']);
+
+    // pendaftar
+    $routes->get('pendaftar', 'Pendaftar::index', ['as' => 'pendaftar']);
+    $routes->get('pendaftar/add', 'Pendaftar::add', ['as' => 'pendaftar-add']);
+    $routes->get('pendaftar/edit/(:num)', 'Pendaftar::edit/$1', ['as' => 'pendaftar-edit']);
+    $routes->get('pendaftar/delete/(:num)', 'Pendaftar::delete/$1', ['as' => 'pendaftar-delete']);
+    $routes->get('pendaftar/konfirm/(:num)', 'Pendaftar::konfirm/$1', ['as' => 'pendaftar-konfirm']);
+
 });
 
+$routes->group('', ['namespace' => 'App\Controllers\Api'], function ($routes) {
+    $routes->post('pendaftaran', 'Home::pendaftaran', ['as' => 'pendaftaran']);
+    $routes->post('jeniskelas/add', 'JenisKelas::add', ['as' => 'jenis-kelas-add']);
+    $routes->post('jeniskelas/edit/(:num)', 'JenisKelas::edit/$1', ['as' => 'jenis-kelas-edit']);
+
+});
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
