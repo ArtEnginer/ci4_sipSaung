@@ -51,8 +51,14 @@ $routes->group('', ['namespace' => 'App\Controllers\Panel'], function ($routes) 
     $routes->get('pendaftar', 'Pendaftar::index', ['as' => 'pendaftar']);
     $routes->get('pendaftar/add', 'Pendaftar::add', ['as' => 'pendaftar-add']);
     $routes->get('pendaftar/edit/(:num)', 'Pendaftar::edit/$1', ['as' => 'pendaftar-edit']);
+    $routes->get('pendaftar/detail/(:num)', 'Pendaftar::detail/$1', ['as' => 'pendaftar-detail']);
     $routes->get('pendaftar/delete/(:num)', 'Pendaftar::delete/$1', ['as' => 'pendaftar-delete']);
+    $routes->get('pendaftar/pending/(:num)', 'Pendaftar::pending/$1', ['as' => 'pendaftar-pending']);
     $routes->get('pendaftar/konfirm/(:num)', 'Pendaftar::konfirm/$1', ['as' => 'pendaftar-konfirm']);
+    $routes->get('pendaftar/tolak/(:num)', 'Pendaftar::tolak/$1', ['as' => 'pendaftar-tolak']);
+
+    // siswa
+    $routes->get('siswa', 'Siswa::index', ['as' => 'siswa']);
 
 });
 

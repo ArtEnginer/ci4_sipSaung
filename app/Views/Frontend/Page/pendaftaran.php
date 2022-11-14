@@ -11,6 +11,7 @@
             <div class="col-md-12">
                 <?= view($config->theme['landing'] . '_message_block') ?>
                 <form method="post">
+                    <input type="hidden" name="status" value="100">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3">
@@ -23,7 +24,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukan nik" required value="<?= old('nik') ?>">
+                                    <input type="number" class="form-control" id="nik" name="nik" placeholder="Masukan nik" required value="<?= old('nik') ?>">
                                     <label for="nik">NIK</label>
                                 </div>
                             </div>
@@ -31,7 +32,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="nisn" name="nisn" placeholder="Masukan NISN" required value="<?= old('nisn') ?>">
+                                    <input type="number" class="form-control" id="nisn" name="nisn" placeholder="Masukan NISN" required value="<?= old('nisn') ?>">
                                     <label for="nisn">NISN</label>
                                 </div>
                             </div>
@@ -100,7 +101,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukan No Hp" required value="<?= old('no_hp') ?>">
+                                    <input type="number" class="form-control" id="no_hp" name="no_hp" placeholder="Masukan No Hp" required value="<?= old('no_hp') ?>">
                                     <label for="no_hp">No Hp</label>
                                 </div>
                             </div>
@@ -108,7 +109,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Masukan Email" required value="<?= old('email') ?>">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Masukan Email" required value="<?= old('email') ?>">
                                     <label for="email">Email</label>
                                 </div>
                             </div>
@@ -135,7 +136,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="no_hp_ortu" name="no_hp_ortu" placeholder="Masukan No Hp Orang Tua" required value="<?= old('no_hp_ortu') ?>">
+                                    <input type="number" class="form-control" id="no_hp_ortu" name="no_hp_ortu" placeholder="Masukan No Hp Orang Tua" required value="<?= old('no_hp_ortu') ?>">
                                     <label for="no_hp_ortu">No Hp Orang Tua</label>
                                 </div>
                             </div>
@@ -161,11 +162,14 @@
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
+
                                 <div class="form-floating">
                                     <select class="form-select" aria-label="Default select example" id="jenis_kelas" name="jenis_kelas" required value="<?= old('jenis_kelas') ?>">
-                                        <option selected>Pilih Jenis Kelas</option>
-                                        <option value="Reguler">Reguler</option>
-                                        <option value="Khusus">Khusus</option>
+                                        <option value="">Pilih Jenis Kelas</option>
+                                        <?php foreach ($jenisKelas as $jk) : ?>
+                                            <option value="<?= $jk->nama ?>"><?= $jk->nama ?></option>
+                                        <?php endforeach; ?>
+
                                     </select>
                                     <label for="jenis_kelas">Jenis Kelas</label>
                                 </div>

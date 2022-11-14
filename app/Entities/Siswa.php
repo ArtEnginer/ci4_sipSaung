@@ -7,7 +7,7 @@ use App\Entities\Cast\Jeniskelas;
 
 class Siswa extends Entity
 {
-    protected $dates   = ['tanggal_masuk', 'tanggal_selesai', 'tanggal_lahir', 'created_at', 'updated_at'];
+    protected $dates   = ['created_at', 'updated_at'];
     protected $casts   = [];
     protected $castHandlers = [];
     protected $datamap = [];
