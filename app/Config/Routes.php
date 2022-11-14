@@ -39,6 +39,10 @@ $routes->get('/', 'Home::index');
 
 service('auth')->routes($routes);
 
+$routes->group('panel',['namespace' => 'App\Controllers\Panel'], function($routes){
+    $routes->get('panel', 'Dashboard::index',['as' =>'panel']);
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
