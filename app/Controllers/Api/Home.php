@@ -41,7 +41,7 @@ class Home extends BaseController
 
         $item = new Siswa($data);
         if ($this->model->save($item)) {
-            return redirect()->back()->with('message', 'Pendaftaran Berhasil');
+            return redirect()->route('/')->with('message', 'Pendaftaran Berhasil');
         } else {
             return redirect()->back()->with('error', 'Pendaftaran Gagal');
         }
