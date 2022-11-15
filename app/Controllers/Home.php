@@ -28,6 +28,11 @@ class Home extends BaseController
 
     public function pendaftaran()
     {
+        $this->data['tentang'] = $this->tentangModel->first();
+        $this->data['item'] = $this->tentangModel->first();
+        $this->data['alamat'] = json_decode($this->data['item']->alamat);
+        $this->data['contact'] = json_decode($this->data['item']->contact);
+        $this->data['sosmed'] = json_decode($this->data['item']->sosmed);
         $this->data['jenisKelas'] = $this->jeniskelasModel->findAll();
         return view('App\Views\Frontend\Page\pendaftaran', $this->data);
     }
