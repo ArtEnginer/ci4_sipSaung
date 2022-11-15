@@ -151,13 +151,12 @@ class Table extends Migration
                 'constraint'     => '255',
             ],
             'alamat'            => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
+                'type'           => 'json',
             ],
             'contact'           => [
                 'type'           => 'json',
             ],
-            'sosial media'     => [
+            'sosmed'     => [
                 'type'           => 'json',
             ],
             'created_at'         => [
