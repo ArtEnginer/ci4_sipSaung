@@ -60,12 +60,33 @@ $routes->group('', ['namespace' => 'App\Controllers\Panel'], function ($routes) 
     // siswa
     $routes->get('siswa', 'Siswa::index', ['as' => 'siswa']);
 
+    // Pengaturan
+    $routes->get('pengaturan', 'Pengaturan::index', ['as' => 'pengaturan']);
+    $routes->get('alamat/add', 'Pengaturan::alamatAdd', ['as' => 'alamat-add']);
+    $routes->get('alamat/edit/(:num)', 'Pengaturan::alamatEdit/$1', ['as' => 'alamat-edit']);
+    $routes->get('alamat/delete/(:num)', 'Pengaturan::alamatDelete/$1', ['as' => 'alamat-delete']);
+    $routes->get('contact/add', 'Pengaturan::contactAdd', ['as' => 'contact-add']);
+    $routes->get('contact/edit/(:num)', 'Pengaturan::contactEdit/$1', ['as' => 'contact-edit']);
+    $routes->get('contact/delete/(:num)', 'Pengaturan::contactDelete/$1', ['as' => 'contact-delete']);
+    $routes->get('sosmed/add', 'Pengaturan::sosmedAdd', ['as' => 'sosmed-add']);
+    $routes->get('sosmed/edit/(:num)', 'Pengaturan::sosmedEdit/$1', ['as' => 'sosmed-edit']);
+    $routes->get('sosmed/delete/(:num)', 'Pengaturan::sosmedDelete/$1', ['as' => 'sosmed-delete']);
+    
+
 });
 
 $routes->group('', ['namespace' => 'App\Controllers\Api'], function ($routes) {
     $routes->post('pendaftaran', 'Home::pendaftaran', ['as' => 'pendaftaran']);
     $routes->post('jeniskelas/add', 'JenisKelas::add', ['as' => 'jenis-kelas-add']);
     $routes->post('jeniskelas/edit/(:num)', 'JenisKelas::edit/$1', ['as' => 'jenis-kelas-edit']);
+    $routes->post('pengaturan/judul/edit', 'Pengaturan::judulEdit', ['as' => 'pengaturan-judul-edit']);
+    $routes->post('pengaturan/deskripsi/edit', 'Pengaturan::deskripsiEdit', ['as' => 'pengaturan-deskripsi-edit']);
+    $routes->post('alamat/add', 'Pengaturan::alamatAdd', ['as' => 'pengaturan-alamat-add']);
+    $routes->post('alamat/edit/(:num)', 'Pengaturan::alamatEdit/$1', ['as' => 'pengaturan-alamat-edit']);
+    $routes->post('contact/add', 'Pengaturan::contactAdd', ['as' => 'pengaturan-contact-add']);
+    $routes->post('contact/edit/(:num)', 'Pengaturan::contactEdit/$1', ['as' => 'pengaturan-contact-edit']);
+    $routes->post('sosmed/add', 'Pengaturan::sosmedAdd', ['as' => 'pengaturan-sosmed-add']);
+    $routes->post('sosmed/edit/(:num)', 'Pengaturan::sosmedEdit/$1', ['as' => 'pengaturan-sosmed-edit']);
 
 });
 service('auth')->routes($routes);
