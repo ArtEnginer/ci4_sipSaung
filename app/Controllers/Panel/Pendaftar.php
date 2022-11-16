@@ -10,6 +10,7 @@ class Pendaftar extends BaseController
     {
         $this->data['config'] = config('Theme');
         $this->model = model('SiswaModel');
+        $this->jeniskelasModel = model('JenisKelasModel');
     }
 
     public function index()
@@ -20,12 +21,14 @@ class Pendaftar extends BaseController
 
     public function add()
     {
+        $this->data['jenisKelas'] = $this->jeniskelasModel->findAll();
         return view('App\Views\Backend\Page\pendaftarAdd', $this->data);
     }
 
     public function edit($id)
     {
         $this->data['item'] = $this->model->find($id);
+        $this->data['jenisKelas'] = $this->jeniskelasModel->findAll();
         return view('App\Views\Backend\Page\pendaftarEdit', $this->data);
     }
 

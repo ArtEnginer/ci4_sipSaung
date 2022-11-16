@@ -82,6 +82,7 @@
                                                 <?php if ($item->status != 300) : ?>
                                                     <li><a class="dropdown-item" href="<?= route_to('pendaftar-tolak', $item->id) ?>">Ditolak</a></li>
                                                 <?php endif ?>
+                                                <li><a href="<?= route_to('pendaftar-edit', $item->id) ?>" class="dropdown-item">Edit</a></li>
                                                 <li><a class="dropdown-item" href="<?= route_to('pendaftar-delete', $item->id) ?>">Hapus</a></li>
                                             </ul>
                                         </div>
