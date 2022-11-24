@@ -32,6 +32,7 @@ class User extends Entity
     private ?string $email         = null;
     private ?string $password      = null;
     private ?string $password_hash = null;
+    private ?string $in_group     = null;
 
     /**
      * @var string[]
@@ -53,6 +54,7 @@ class User extends Entity
         'active'      => 'int_bool',
         'permissions' => 'array',
         'groups'      => 'array',
+
     ];
 
     /**
@@ -215,6 +217,15 @@ class User extends Entity
         }
 
         return $this->email;
+    }
+
+    public function getGroup(): ?string
+    {
+        if ($this->in_group === null) {
+            $this->in_group = $this->groups[0] ?? null;
+        }
+
+        return $this->in_group;
     }
 
     public function setEmail(string $email): void

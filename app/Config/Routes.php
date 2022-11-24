@@ -72,6 +72,11 @@ $routes->group('', ['namespace' => 'App\Controllers\Panel'], function ($routes) 
     $routes->get('sosmed/edit/(:num)', 'Pengaturan::sosmedEdit/$1', ['as' => 'sosmed-edit']);
     $routes->get('sosmed/delete/(:num)', 'Pengaturan::sosmedDelete/$1', ['as' => 'sosmed-delete']);
     
+    // Users
+    $routes->get('users', 'Users::index', ['as' => 'users']);
+    $routes->get('users/add', 'Users::add', ['as' => 'users-add']);
+    $routes->get('users/edit/(:num)', 'Users::edit/$1', ['as' => 'users-edit']);
+    $routes->get('users/delete/(:num)', 'Users::delete/$1', ['as' => 'users-delete']);
 
 });
 
@@ -89,6 +94,8 @@ $routes->group('', ['namespace' => 'App\Controllers\Api'], function ($routes) {
     $routes->post('contact/edit/(:num)', 'Pengaturan::contactEdit/$1', ['as' => 'pengaturan-contact-edit']);
     $routes->post('sosmed/add', 'Pengaturan::sosmedAdd', ['as' => 'pengaturan-sosmed-add']);
     $routes->post('sosmed/edit/(:num)', 'Pengaturan::sosmedEdit/$1', ['as' => 'pengaturan-sosmed-edit']);
+    $routes->post('users/add', 'Users::add', ['as' => 'users-add']);
+    $routes->post('users/edit/(:num)', 'Users::edit/$1', ['as' => 'users-edit']);
 
 });
 service('auth')->routes($routes);
